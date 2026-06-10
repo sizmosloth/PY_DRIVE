@@ -27,3 +27,13 @@ else:
 age = 20
 status = "adult" if age >= 18 else "minor"
 print(f"You are an {status}.")
+
+
+day = "Monday"
+match day:
+    case "Monday":
+        print("Start of the week.")
+    case "Friday":
+        print("End of the week.")
+    case _:
+        print("Midweek day.")
