@@ -41,10 +41,3 @@ def get_stats(numbers):
 
 low, high, total = get_stats([3, 6, 5, 7, 8, 9])
 print(low, high, total)
-
-#ARGS MULTIPLE INPUTS LIKE IN SIDE A TUPLE FOR A FUNCTION---
-def makepizza(size, *toppings):
-    print(f"Make a {size} Pizza with toppings:")
-    for topping in toppings:
-        print(f"- {topping}")
-makepizza("medium", "cheese", "mushrooms", "corn")
