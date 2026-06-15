@@ -24,3 +24,30 @@ print(range(5))              # range(0, 5)
 print(list(range(5)))        # [0, 1, 2, 3, 4]
 print(list(range(1, 6)))     # [1, 2, 3, 4, 5]
 print(list(range(0, 10, 2))) # [0, 2, 4, 6, 8] — step
+
+# Sorted function --- returns a sorted list
+nums = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+print(sorted(nums))
+print(sorted(nums, reverse = False))
+
+words = ["Samay", "Bagga", "Is", "A", "Goat"]
+print(sorted(words))         # alphabetical
+
+print(sorted(words, key = len)) # key = sort by what?
+
+# Map --- Is a function to every item
+num = [1, 2, 3, 4, 5]
+
+result = []   # without map
+for n in num :
+    result.append(n ** 2)
+print(result)
+
+result = list(map(lambda x : x ** 2 , nums))   # with map
+print(result)
+
+def double(x):   # map with normal function
+    return x * 2
+
+result = list(map(double, nums))
+print(result)  
