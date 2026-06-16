@@ -36,6 +36,7 @@ print(sorted(words))         # alphabetical
 print(sorted(words, key = len)) # key = sort by what?
 
 # Map --- Is a function to every item
+# Map -- Parameters -> (function, iterable)
 num = [1, 2, 3, 4, 5]
 
 result = []   # without map
@@ -51,3 +52,48 @@ def double(x):   # map with normal function
 
 result = list(map(double, nums))
 print(result)  
+
+# More example:
+
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+y = list(map(lambda x : x ** 2, arr))
+print(y)
+
+arr2 = [3, 5, 6, 8, 9]
+
+def even (num) :
+    if num % 2 == 0 :
+        return num
+
+p = list(map(even, arr2))
+print(p) 
+
+# map() transforms every element so the result is like [None, None, 6, 8, None]
+# We can use filter() for elements that satisfies a condition
+
+# Filter --- keeps items where condition is true
+
+nums1 = [1, 2, 3, 4, 5, 6, 7, 8]
+
+# without filter
+result = []
+for n in nums1:
+    if n % 2 == 0:
+        result.append(n)
+print(result)        # [2, 4, 6, 8]
+
+# with filter — cleaner
+result = list(filter(lambda x: x % 2 == 0, nums1))
+print(result)        # [2, 4, 6, 8]
+
+# Previous problem with map ---
+
+z = list(filter(lambda x : x % 2 == 0, arr2))
+print(z)
+
+# Enumerate --- gives index + value while looping
+fruit = ["apple", "banana", "chickoo", "dragonfruit"]
+
+for i, fru in enumerate(fruit):
+    print(f"{i + 1} - {fru}")    # can be useful for listing
