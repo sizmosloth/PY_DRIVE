@@ -97,3 +97,16 @@ fruit = ["apple", "banana", "chickoo", "dragonfruit"]
 
 for i, fru in enumerate(fruit):
     print(f"{i + 1} - {fru}")    # can be useful for listing
+
+# Zip --- Combines two list together
+
+names = ["Samay", "Abhishek", "Ritik"]
+age = [18, 19, 20]
+
+for n , a in zip(names, age) :
+    print(f"{n} is {a} years old.")
+
+# Dict -- to make dictionary
+
+student_dict = dict(zip(names, age))
+print(student_dict) 
