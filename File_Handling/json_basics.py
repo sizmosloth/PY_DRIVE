@@ -37,3 +37,18 @@ raw_text = '{"name": "Samay", "age": 18}'
 parsed = json.loads(raw_text)
 print(parsed)
 print(type(parsed))    # <class 'dict'>
+
+tasks = [
+    {"title": "Learn JSON", "done": True},
+    {"title": "Build project", "done": False}
+]
+
+with open("tasks_demo.json", "w") as f:
+    json.dump(tasks, f, indent=4)
+
+with open("tasks_demo.json", "r") as f:
+    loaded_tasks = json.load(f)
+
+print(loaded_tasks)
+for task in loaded_tasks:
+    print(task["title"], "-", task["done"])
