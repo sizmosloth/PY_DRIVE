@@ -1,0 +1,9 @@
+{
+    "name": "Samay",
+    "age": "18",
+    "skills": [
+        "Python",
+        "Git"
+    ],
+    "is_pro": true
+}
