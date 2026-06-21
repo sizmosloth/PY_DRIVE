@@ -20,3 +20,12 @@ data = response.json()
 print(data)
 
 print(f"{data['name']} is probably around {data['age']} years old")
+
+# Cleaner way --- Insted of building the url string yourself using the params argument
+
+url2 = "https://api.agify.io/"
+params = {"name": "rahul"}
+response2 = requests.get(url2, params=params)
+data2 = response2.json()
+
+print(data2)
