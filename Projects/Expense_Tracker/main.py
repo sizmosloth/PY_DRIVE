@@ -2,14 +2,9 @@
 
 expenses = []
 
-def add_expense(ammount, category, date):
-    exp = {
-        "Ammount" : ammount,
-        "Category" : category,
-        "Date" : date
-    }
-    expenses.append(exp)
-    print(f"Expense added of category : {category} of ${ammount} on date(DD/MM/YY): {date}")
+def add_expense(**details):
+    expenses.append(details)
+    print(f"Expense added of category : {details['Category']} of ${details['Ammount']} on date(DD/MM/YY): {details['Date']}")
 
 def all_exp():
     if not expenses:
@@ -20,5 +15,5 @@ def all_exp():
     
 # Manual Testing
 
-add_expense(500, "Food", "06/12/26")
+add_expense(Ammount = 500, Category = "Food", Date = "03/06/26")
 all_exp()
