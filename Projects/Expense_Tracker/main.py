@@ -21,8 +21,23 @@ def total_spent():
     for i in expenses:
         total = total + int(i['Ammount'])
     print(f"Total Spent is : ${total}\n")
+
+def filter_by_category(cat):
+    found = False
+
+    for expense in expenses:
+        if expense['Category'] == cat:
+            print(f"- {expense['Category']} - ${expense['Ammount']} - {expense['Date']}")
+            found = True
+    if not found:
+        print("No Category Found!")
+
 # Manual Testing
 
 add_expense(Ammount = 500, Category = "Food", Date = "03/06/26")
+add_expense(Ammount = 500, Category = "Clothes", Date = "03/06/26")
+add_expense(Ammount = 500, Category = "Entertainment", Date = "03/06/26")
+add_expense(Ammount = 500, Category = "Study", Date = "03/06/26")
 all_exp()
 total_spent()
+filter_by_category('Food')
