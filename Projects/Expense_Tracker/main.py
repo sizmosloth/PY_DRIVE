@@ -39,15 +39,46 @@ def delete_expense(index):
     else:
         print("Invalid expense number")
 
-# Manual Testing
+# Main Menu
 
-add_expense(Ammount = 500, Category = "Food", Date = "03/06/26")
-add_expense(Ammount = 500, Category = "Clothes", Date = "03/06/26")
-add_expense(Ammount = 500, Category = "Entertainment", Date = "03/06/26")
-add_expense(Ammount = 500, Category = "Study", Date = "03/06/26")
-all_exp()
-total_spent()
-filter_by_category('Food')
-all_exp()
-delete_expense('2')
-all_exp()
+def main():
+    while True:
+        print("\n--- EXPENSE TRACKER ---")
+        print("1. Add expense")
+        print("2. View all expenses")
+        print("3. Total spent")
+        print("4. Filter by category")
+        print("5. Delete expense")
+        print("6. Exit")
+
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            category = input("Category: ")
+            amount = input("Amount: ")
+            date = input("Date (DD/MM/YY): ")
+            add_expense(Category=category, Ammount=amount, Date=date)
+        elif choice == "2":
+            all_exp()
+
+        elif choice == "3":
+            total_spent()
+
+        elif choice == "4":
+            cat = input("Enter category to filter: ")
+            filter_by_category(cat)
+
+        elif choice == "5":
+            all_exp()
+            num = int(input("Enter expense number to delete: "))
+            delete_expense(num - 1)
+
+        elif choice == "6":
+            print("Bye!")
+            break
+
+        else:
+            print("Invalid choice, try again")
+    
+if __name__ == "__main__":
+    main()
