@@ -1,10 +1,26 @@
 # Expenses Tracker for User --->
+import json
+
+filename = "expenses.json" 
 
 expenses = []
+
+def save_expenses():
+    with open (filename, "w") as f:
+        json.dump(expenses, f, indent = 4)
+
+def load_expenses():
+    global expenses
+    try:
+        with open(filename, "r") as f:
+            expenses = json.load(f)
+    except FileNotFoundError:
+        expenses = []
 
 def add_expense(**details):
     expenses.append(details)
     print(f"Expense added of category : {details['Category']} of ${details['Ammount']} on date(DD/MM/YY): {details['Date']}\n")
+    save_expenses()
 
 def all_exp():
     if not expenses:
@@ -36,12 +52,14 @@ def delete_expense(index):
     if 0 <= index < len(expenses):
         removed = expenses.pop(index)
         print(f"Deleted: {removed['Category']} - ${removed['Ammount']}\n")
+        save_expenses()
     else:
         print("Invalid expense number")
 
 # Main Menu
 
 def main():
+    load_expenses() # Loads save data the moment app starts ---
     while True:
         print("\n--- EXPENSE TRACKER ---")
         print("1. Add expense")
