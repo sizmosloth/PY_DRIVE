@@ -32,16 +32,12 @@ def filter_by_category(cat):
     if not found:
         print("No Category Found!")
 
-def delete_expense(key):
-    i = 0
-    if not expenses:
-        print("NO EXPENSES YET!!!")
-        return
-    for expense in expenses:
-        if expense['Category'] == key:
-            expenses.pop(i)
-            print(f"Deleted {key} Expense\n")
-        i = i + 1
+def delete_expense(index):
+    if 0 <= index < len(expenses):
+        removed = expenses.pop(index)
+        print(f"Deleted: {removed['Category']} - ${removed['Ammount']}\n")
+    else:
+        print("Invalid expense number")
 
 # Manual Testing
 
@@ -52,5 +48,6 @@ add_expense(Ammount = 500, Category = "Study", Date = "03/06/26")
 all_exp()
 total_spent()
 filter_by_category('Food')
-delete_expense('Clothes')
+all_exp()
+delete_expense('2')
 all_exp()
