@@ -19,7 +19,7 @@ def total_spent():
         return
     total = 0
     for i in expenses:
-        total = total + int(i['Ammount'])
+        total = total + float(i['Ammount'])
     print(f"Total Spent is : ${total}\n")
 
 def filter_by_category(cat):
@@ -32,6 +32,17 @@ def filter_by_category(cat):
     if not found:
         print("No Category Found!")
 
+def delete_expense(key):
+    i = 0
+    if not expenses:
+        print("NO EXPENSES YET!!!")
+        return
+    for expense in expenses:
+        if expense['Category'] == key:
+            expenses.pop(i)
+            print(f"Deleted {key} Expense\n")
+        i = i + 1
+
 # Manual Testing
 
 add_expense(Ammount = 500, Category = "Food", Date = "03/06/26")
@@ -41,3 +52,5 @@ add_expense(Ammount = 500, Category = "Study", Date = "03/06/26")
 all_exp()
 total_spent()
 filter_by_category('Food')
+delete_expense('Clothes')
+all_exp()
