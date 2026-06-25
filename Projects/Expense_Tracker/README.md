@@ -5,9 +5,11 @@ Purpose:
 - User Inputs
 - Functions
 - Kwargs
-- Other Flow
+- main
+- json dump and load
+
 
 **What this provides?**
-This program helps you to manage your expenses till now you can list them and see them but later on i will add expense deletion and many more things
+This program helps to list your expenses and it can make a json file so that we can use previous expenses to work on. Learned json and exception handling.
 
 sizmosloth - git blame points here
