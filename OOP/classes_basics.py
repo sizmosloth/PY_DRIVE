@@ -21,3 +21,8 @@ e2.display()
 
 print(e1.category)
 print(e2.date)
+
+# __init__ = "initialize" means it runs once object is created as a constructor in c++
+# self     = a specifi object lets each expense remember its own details
+
+e3 = Expense("Entertainment", 900, "13/06/26")
