@@ -33,3 +33,19 @@ name = "sizmosloth"
 encode = name.encode()
 print(f"Name: {name}")
 print(f"Encoded: {encode}")
+
+# the usecase of hashing ---
+
+# imagine this hash was saved to disk when you FIRST set your master password
+stored_hash = hashlib.sha256("thismymasterpassword".encode()).hexdigest()
+
+# later, when the app starts, you type your password again
+attempt = input("Enter master password: ")
+attempt_hash = hashlib.sha256(attempt.encode()).hexdigest()
+
+if attempt_hash == stored_hash:
+    print("Access granted!")
+else:
+    print("Wrong password!")
+
+    
