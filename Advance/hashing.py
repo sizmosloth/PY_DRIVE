@@ -17,3 +17,19 @@ print(f"Hashed: {hashed}")
 #Password: sizmoslothisawesome
 #Hashed: 00b5d60a070467a27379d5625abf88b7115336a4a71ea4274dd8bc63250ea5d4
 
+# run it again — same input, same hash, every single time
+hashed_again = hashlib.sha256(password.encode()).hexdigest()
+print(hashed_again)
+print(hashed == hashed_again)   # True — always identical for the same input
+
+# EVEN A TINY CHANGE = COMPLETELY DIFFERENT HASH
+
+password2 = "sizmoslothisnotawesome!"
+hashed2 = hashlib.sha256(password2.encode()).hexdigest()
+print(f"Password: {password2}")
+print(f"Hashed: {hashed2}")
+
+name = "sizmosloth"
+encode = name.encode()
+print(f"Name: {name}")
+print(f"Encoded: {encode}")
