@@ -35,3 +35,21 @@ print("Standard Deviation:", std_dev)
 # Range
 data_range = max(data) - min(data)
 print("Range:", data_range)
+
+
+# 1 - 100 Mean, Median, Mode, Variance, Standard Deviation, Range
+data_1_to_100 = list(range(1, 101))
+
+print("\nData (1 to 100):", data_1_to_100)  
+
+print("Mean (1 to 100):", statistics.mean(data_1_to_100))
+
+print("Median (1 to 100):", statistics.median(data_1_to_100))
+
+print("Mode (1 to 100):", statistics.mode(data_1_to_100))
+
+print("Variance (1 to 100):", statistics.variance(data_1_to_100))
+
+print("Standard Deviation (1 to 100):", statistics.stdev(data_1_to_100))
+
+print("Range (1 to 100):", max(data_1_to_100) - min(data_1_to_100))
