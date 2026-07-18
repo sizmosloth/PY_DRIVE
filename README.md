@@ -18,6 +18,7 @@ everything i learned, organized by topic.
 - `Error_Handling` — try, except, pray
 - `Advance` — the deep end
 - `Projects` — where it all comes together
+- `Statistics` — Maths stuff
 
 ---
 
