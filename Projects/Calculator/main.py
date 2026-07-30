@@ -8,7 +8,7 @@ def add (*args):
 
 def sub (*args):
     sub = args[0]
-    for i in args:
+    for i in args[1:]:
         if (i == 0):
             continue
         sub -= i
